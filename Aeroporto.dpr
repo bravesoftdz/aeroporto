@@ -26,7 +26,8 @@ uses
   UVoo in 'Modelo\Persistencia\UVoo.pas',
   UAeronave in 'Modelo\Persistencia\UAeronave.pas',
   UModelo in 'Modelo\Persistencia\UModelo.pas',
-  UMarca in 'Modelo\Persistencia\UMarca.pas';
+  UMarca in 'Modelo\Persistencia\UMarca.pas',
+  UPassagem in 'Modelo\Persistencia\UPassagem.pas';
 
 {$R *.res}
 
