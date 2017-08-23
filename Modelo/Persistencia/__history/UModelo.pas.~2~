@@ -1,0 +1,40 @@
+unit UModelo;
+
+interface
+
+uses
+    UEntidade
+  , UMarca
+  ;
+
+type
+  TMODELO = class(TENTIDADE)
+  public
+    NOME : String;
+    MARCA: TMARCA;
+
+    constructor Create; override;
+    destructor Detroy; override;
+  end;
+
+implementation
+
+uses
+    SysUtils
+  ;
+
+{ TMODELO }
+
+constructor TMODELO.Create;
+begin
+  inherited;
+  MARCA := TMARCA.Create;
+end;
+
+destructor TMODELO.Detroy;
+begin
+  FreeAndNil(MARCA);
+  inherited;
+end;
+
+end.

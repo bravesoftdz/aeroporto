@@ -1,0 +1,18 @@
+unit UAeronave;
+
+interface
+
+uses
+    UEntidade
+  , UModelo
+  ;
+
+type
+  TAERONAVE = class(TENTIDADE)
+  public
+    MODELO: TMODELO;
+  end;
+
+implementation
+
+end.

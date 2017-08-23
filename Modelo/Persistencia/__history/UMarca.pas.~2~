@@ -1,0 +1,18 @@
+unit UMarca;
+
+interface
+
+uses
+    UEntidade
+  ;
+
+type
+  TMARCA = class(TENTIDADE)
+  public
+    NOME: String;
+    FUNDACAO: TDate;
+  end;
+
+implementation
+
+end.

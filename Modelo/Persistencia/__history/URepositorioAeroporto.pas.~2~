@@ -1,0 +1,47 @@
+unit URepositorioAeroporto;
+
+interface
+
+uses
+    UCidade
+  , UAeroporto
+  , UEntidade
+  , URepositorioDB
+  , SqlExpr
+  ;
+
+type
+  TRepositorioAeroporto = class(TRepositorioDB<TAEROPORTO>)
+  public
+    constructor Create;
+
+    procedure AtribuiDBParaEntidade(const coAEROPORTO: TAEROPORTO); override;
+    procedure AtribuiEntidadeParaDB(const coAEROPORTO: TAEROPORTO;
+                                    const coSQLQuery: TSQLQuery); override;
+  end;
+
+
+implementation
+
+{ TRepositorioAeroporto }
+
+procedure TRepositorioAeroporto.AtribuiDBParaEntidade(
+  const coAEROPORTO: TAEROPORTO);
+begin
+  inherited;
+
+end;
+
+procedure TRepositorioAeroporto.AtribuiEntidadeParaDB(
+  const coAEROPORTO: TAEROPORTO; const coSQLQuery: TSQLQuery);
+begin
+  inherited;
+
+end;
+
+constructor TRepositorioAeroporto.Create;
+begin
+  Inherited Create(TAEROPORTO, TBL_AEROPORTO, )
+end;
+
+end.

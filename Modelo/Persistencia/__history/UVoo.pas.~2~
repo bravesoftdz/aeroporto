@@ -1,0 +1,44 @@
+unit UVoo;
+
+interface
+
+uses
+    UEntidade
+  , UCidade
+  ;
+
+type
+  TVOO = class(TENTIDADE)
+  public
+    CIDADE_ORIGEM: TCIDADE;
+    CIDADE_DESTNO: TCIDADE;
+    PARTIDA      : TDateTime;
+    CHEGATA      : TDateTime;
+
+    constructor Create; override;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+uses
+    SysUtils
+  ;
+
+{ TVOO }
+
+constructor TVOO.Create;
+begin
+  inherited;
+  CIDADE_ORIGEM := TCIDADE.Create;
+  CIDADE_DESTNO := TCIDADE.Create;
+end;
+
+destructor TVOO.Destroy;
+begin
+  FreeAndNil(CIDADE_ORIGEM);
+  FreeAndNil(CIDADE_DESTNO);
+  inherited;
+end;
+
+end.

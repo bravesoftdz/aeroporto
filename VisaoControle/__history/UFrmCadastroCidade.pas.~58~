@@ -1,0 +1,60 @@
+unit UFrmCadastroCidade;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UFrmCRUD, Menus, Buttons, StdCtrls, ExtCtrls
+  , UCidade
+  ;
+
+type
+  TFrmCadastroCidade = class(TFrmCRUD)
+    gbInformacoes: TGroupBox;
+    edNome: TLabeledEdit;
+    edPopulacao: TLabeledEdit;
+  private
+    FCIDADE: TCIDADE;
+
+    procedure Inicializa; override;
+    procedure PreencheEntidade; override;
+    procedure PreencheFormulario; override;
+    procedure PosicionaCursorPrimeiroCampo; override;
+  end;
+
+var
+  FrmCadastroCidade: TFrmCadastroCidade;
+
+implementation
+
+{$R *.dfm}
+
+{ TFrmCadastroCidade }
+
+procedure TFrmCadastroCidade.Inicializa;
+begin
+  inherited;
+  DefineEntidade(@FCIDADE, TCIDADE);
+end;
+
+procedure TFrmCadastroCidade.PosicionaCursorPrimeiroCampo;
+begin
+  inherited;
+  edNome.SetFocus;
+end;
+
+procedure TFrmCadastroCidade.PreencheEntidade;
+begin
+  inherited;
+  FCIDADE.NOME      := edNome.Text;
+  FCIDADE.POPULACAO := StrToIntDef(edPopulacao.Text, 0);
+end;
+
+procedure TFrmCadastroCidade.PreencheFormulario;
+begin
+  inherited;
+  edNome.Text      := FCIDADE.NOME;
+  edPopulacao.Text := IntToStr(FCIDADE.POPULACAO);
+end;
+
+end.

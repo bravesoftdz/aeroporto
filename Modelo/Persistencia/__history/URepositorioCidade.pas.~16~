@@ -1,0 +1,16 @@
+unit URepositorioCidade;
+
+interface
+
+uses
+    UCidade
+  , URepositorioDB
+  ;
+
+type
+  TRepositorioCidade = class(TRepositorioDB<TCIDADE>)
+  end;
+
+implementation
+
+end.

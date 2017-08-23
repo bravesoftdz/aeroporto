@@ -1,0 +1,28 @@
+unit URegraCRUDAeroporto;
+
+interface
+
+uses
+    URegraCRUD
+  , URepositorioDB
+  , URepositorioAeroporto
+  , UEntidade
+  ;
+
+type
+  TRegraCRUDCidade = class(TRegraCRUD)
+  public
+    constructor Create; override;
+  end;
+
+implementation
+
+{ TRegraCRUDCidade }
+
+constructor TRegraCRUDCidade.Create;
+begin
+  inherited;
+  FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioAeroporto.Create);
+end;
+
+end.

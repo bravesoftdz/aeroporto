@@ -1,0 +1,44 @@
+unit URota;
+
+interface
+
+uses
+    UEntidade
+  , UCidade
+  ;
+
+type
+  TROTA = class(TENTIDADE)
+  public
+    CIDADE_ORIGEM: TCIDADE;
+    CIDADE_DESTNO: TCIDADE;
+    DISTANCIA_NM : Integer;
+    TEMPO_MINUTOS: Integer;
+
+    constructor Create; override;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+uses
+    SysUtils
+  ;
+
+{ TVOO }
+
+constructor TROTA.Create;
+begin
+  inherited;
+  CIDADE_ORIGEM := TCIDADE.Create;
+  CIDADE_DESTNO := TCIDADE.Create;
+end;
+
+destructor TROTA.Destroy;
+begin
+  FreeAndNil(CIDADE_ORIGEM);
+  FreeAndNil(CIDADE_DESTNO);
+  inherited;
+end;
+
+end.
