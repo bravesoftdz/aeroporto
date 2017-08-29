@@ -2,4 +2,4 @@
 *.dproj.local
 *.identcache
 /Dcu
-/__history
+**/__history

@@ -22,10 +22,14 @@ type
 
 const
   TBL_AERONAVE                     = 'AERONAVE';
+  FLD_AERONAVE_PREFIXO             = 'PREFIXO';
   FLD_AERONAVE_ID_MODELO           = 'ID_MODELO';
   FLD_AERONAVE_AUTOMONIA_VOO_NM    = 'AUTOMONIA_VOO_NM';
   FLD_AERONAVE_ASSENTOS            = 'ASSENTOS';
   FLD_AERONAVE_PISTA_NECESSARIA_KM = 'PISTA_NECESSARIA_KM';
+
+resourcestring
+  STR_AERONAVE = 'Aeronave';
 
 implementation
 

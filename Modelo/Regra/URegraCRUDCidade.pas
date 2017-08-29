@@ -1,3 +1,10 @@
+{
+  @author: Felipe Silvino Pereira
+  @date: 01/08/2017
+  @description: Classe base para implementação das regras de negócio a serem
+                aplicadadas à uma entidade durante o CRUD.
+}
+
 unit URegraCRUDCidade;
 
 interface

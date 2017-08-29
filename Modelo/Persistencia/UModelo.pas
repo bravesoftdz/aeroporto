@@ -22,6 +22,9 @@ const
   FLD_MODELO_NOME     = 'NOME';
   FLD_MODELO_ID_MARCA = 'ID_MARCA';
 
+resourcestring
+  STR_MODELO = 'Modelo da Aeronave';
+
 implementation
 
 uses

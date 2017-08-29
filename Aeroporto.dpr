@@ -19,7 +19,7 @@ uses
   URegraCRUDCidade in 'Modelo\Regra\URegraCRUDCidade.pas',
   URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
   UAeroporto in 'Modelo\Persistencia\UAeroporto.pas',
-  URepositorioAeroporto in 'Modelo\Persistencia\URepositorioAeroporto.pas',
+  URepositorioRota in 'Modelo\Persistencia\URepositorioRota.pas',
   UFrmCadastroAeroporto in 'VisaoControle\UFrmCadastroAeroporto.pas' {FrmCadastroAeroporto},
   URegraCRUDAeroporto in 'Modelo\Regra\URegraCRUDAeroporto.pas',
   URota in 'Modelo\Persistencia\URota.pas',
@@ -27,7 +27,11 @@ uses
   UAeronave in 'Modelo\Persistencia\UAeronave.pas',
   UModelo in 'Modelo\Persistencia\UModelo.pas',
   UMarca in 'Modelo\Persistencia\UMarca.pas',
-  UPassagem in 'Modelo\Persistencia\UPassagem.pas';
+  UPassagem in 'Modelo\Persistencia\UPassagem.pas',
+  URepositorioAeroporto in 'Modelo\Persistencia\URepositorioAeroporto.pas',
+  URepositorioAeronave in 'Modelo\Persistencia\URepositorioAeronave.pas',
+  URepositorioVoo in 'Modelo\Persistencia\URepositorioVoo.pas',
+  URepositorioModelo in 'Modelo\Persistencia\URepositorioModelo.pas';
 
 {$R *.res}
 

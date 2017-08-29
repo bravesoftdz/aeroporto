@@ -10,10 +10,10 @@ uses
 type
   TROTA = class(TENTIDADE)
   public
-    CIDADE_ORIGEM: TCIDADE;
-    CIDADE_DESTNO: TCIDADE;
-    DISTANCIA_NM : Integer;
-    TEMPO_MINUTOS: Integer;
+    CIDADE_ORIGEM : TCIDADE;
+    CIDADE_DESTINO: TCIDADE;
+    DISTANCIA_NM  : Integer;
+    TEMPO_MINUTOS : Integer;
 
     constructor Create; override;
     destructor Destroy; override;
@@ -26,6 +26,9 @@ const
   FLD_ROTA_DISTANCIA_NM      = 'DISTANCIA_NM';
   FLD_ROTA_TEMPO_MINUTOS     = 'TEMPO_MINUTOS';
 
+resourcestring
+  STR_ROTA = 'Rota';
+
 implementation
 
 uses
@@ -37,14 +40,14 @@ uses
 constructor TROTA.Create;
 begin
   inherited;
-  CIDADE_ORIGEM := TCIDADE.Create;
-  CIDADE_DESTNO := TCIDADE.Create;
+  CIDADE_ORIGEM  := TCIDADE.Create;
+  CIDADE_DESTINO := TCIDADE.Create;
 end;
 
 destructor TROTA.Destroy;
 begin
   FreeAndNil(CIDADE_ORIGEM);
-  FreeAndNil(CIDADE_DESTNO);
+  FreeAndNil(CIDADE_DESTINO);
   inherited;
 end;
 
