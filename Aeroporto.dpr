@@ -2,6 +2,8 @@ program Aeroporto;
 
 uses
   Forms,
+  SysUtils,
+  Controls,
   UFrmPrincipal in 'VisaoControle\UFrmPrincipal.pas' {FrmPrincipal},
   UFrmCRUD in 'VisaoControle\UFrmCRUD.pas' {FrmCRUD},
   UUtilitarios in 'Modelo\UUtilitarios.pas',
@@ -31,13 +33,27 @@ uses
   URepositorioAeroporto in 'Modelo\Persistencia\URepositorioAeroporto.pas',
   URepositorioAeronave in 'Modelo\Persistencia\URepositorioAeronave.pas',
   URepositorioVoo in 'Modelo\Persistencia\URepositorioVoo.pas',
-  URepositorioModelo in 'Modelo\Persistencia\URepositorioModelo.pas';
+  URepositorioModelo in 'Modelo\Persistencia\URepositorioModelo.pas',
+  UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin},
+  UUsuario in 'Modelo\Persistencia\UUsuario.pas',
+  URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
+  UUsuarioLogado in 'Modelo\UUsuarioLogado.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TdmProway, dmProway);
-  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
-  Application.Run;
+  FrmLogin := TFrmLogin.Create(nil);
+  if FrmLogin.ShowModal = mrYes then
+    begin
+      FreeAndNil(FrmLogin);
+      Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+      Application.Run;
+    end
+  else
+    begin
+      Application.Run;
+      Application.Terminate;
+    end;
 end.

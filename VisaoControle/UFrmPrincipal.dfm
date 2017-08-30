@@ -24,6 +24,11 @@ object FrmPrincipal: TFrmPrincipal
     Height = 19
     Panels = <
       item
+        Text = 'Banco de Dados:'
+        Width = 400
+      end
+      item
+        Text = 'Usu'#225'rio:'
         Width = 50
       end>
   end

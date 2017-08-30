@@ -12,18 +12,14 @@ type
   TFrmPrincipal = class(TForm)
     mmPrincipal: TMainMenu;
     miSair: TMenuItem;
-    sbPrincipal: TStatusBar;
     miCadastro: TMenuItem;
     miCidades: TMenuItem;
     miAeroporto: TMenuItem;
+    sbPrincipal: TStatusBar;
     procedure miSairClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure miCidadesClick(Sender: TObject);
     procedure miAeroportoClick(Sender: TObject);
-  private
-    { Private declaration }
-  public
-    { Public declarations }
+    procedure FormShow(Sender: TObject);
   end;
 
 var
@@ -38,6 +34,7 @@ uses
   , UFrmCadastroAeroporto
   , UCidade
   , UAeroporto
+  , UUsuarioLogado
   ;
 
 {$R *.dfm}
@@ -61,6 +58,9 @@ procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
   sbPrincipal.Panels[0].Text :=
     'Banco de Dados: ' + dmProway.SQLConnection.Params.Values[CNT_DATA_BASE];
+
+  sbPrincipal.Panels[1].Text :=
+    'Usuário: ' + TUsuarioLogado.Unico.USUARIO.LOGIN;
 end;
 
 end.

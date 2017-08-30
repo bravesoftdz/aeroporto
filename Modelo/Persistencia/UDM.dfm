@@ -29,7 +29,7 @@ object dmProway: TdmProway
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      'Database=localhost:T:\Projetos\Aeroporto\DB\AEROPORTO.FDB'
+      'Database=localhost:T:\DB\Aeroporto\AEROPORTO.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
