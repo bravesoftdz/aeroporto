@@ -52,7 +52,7 @@ procedure TRepositorioAeronave.AtribuiDBParaEntidade(
   const coAERONAVE: TAERONAVE);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coAERONAVE.PREFIXO              := FieldByName(FLD_AERONAVE_PREFIXO).AsString;
     coAERONAVE.AUTOMONIA_VOO_NM     := FieldByName(FLD_AERONAVE_AUTOMONIA_VOO_NM).AsInteger;

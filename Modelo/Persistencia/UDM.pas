@@ -9,13 +9,9 @@ uses
   ;
 
 type
-  TdmProway = class(TDataModule)
+  TdmEntra21 = class(TDataModule)
     SQLConnection: TSQLConnection;
-    SQLInsert: TSQLQuery;
-    SQLDelete: TSQLQuery;
-    SQLUpdate: TSQLQuery;
     SQLSelect: TSQLDataSet;
-    SQLTable: TSQLTable;
     procedure DataModuleCreate(Sender: TObject);
   private
     FTransaction: TDBXTransaction;
@@ -30,7 +26,7 @@ type
   end;
 
 var
-  dmProway: TdmProway;
+  dmEntra21: TdmEntra21;
 
 const
   CNT_DATA_BASE = 'Database';
@@ -43,7 +39,7 @@ uses
     Math
   ;
 
-procedure TdmProway.AbortaTransacao;
+procedure TdmEntra21.AbortaTransacao;
 begin
   if not TemTransacaoAtiva then
     raise Exception.CreateFmt(STR_NAO_EXISTE_TRANSACAO_ATIVA, [STR_ABORTAR]);
@@ -51,7 +47,7 @@ begin
   SQLConnection.RollbackFreeAndNil(FTransaction);
 end;
 
-procedure TdmProway.FinalizaTransacao;
+procedure TdmEntra21.FinalizaTransacao;
 begin
   if not TemTransacaoAtiva then
     raise Exception.CreateFmt(STR_NAO_EXISTE_TRANSACAO_ATIVA, [STR_FINALIZAR]);
@@ -59,7 +55,7 @@ begin
   SQLConnection.CommitFreeAndNil(FTransaction);
 end;
 
-procedure TdmProway.IniciaTransacao;
+procedure TdmEntra21.IniciaTransacao;
 begin
   if TemTransacaoAtiva then
     raise Exception.Create(STR_JA_EXISTE_TRANSACAO_ATIVA);
@@ -67,18 +63,18 @@ begin
   FTransaction := SQLConnection.BeginTransaction;
 end;
 
-function TdmProway.TemTransacaoAtiva: Boolean;
+function TdmEntra21.TemTransacaoAtiva: Boolean;
 begin
   Result := SQLConnection.InTransaction;
 end;
 
-procedure TdmProway.DataModuleCreate(Sender: TObject);
+procedure TdmEntra21.DataModuleCreate(Sender: TObject);
 begin
   SQLConnection.Connected := True;
   SQLConnection.Open;
 end;
 
-procedure TdmProway.ValidaTransacaoAtiva;
+procedure TdmEntra21.ValidaTransacaoAtiva;
 begin
   if not TemTransacaoAtiva then
     raise Exception.Create(STR_VALIDA_TRANSACAO_ATIVA);

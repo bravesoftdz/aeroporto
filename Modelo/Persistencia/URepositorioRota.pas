@@ -51,7 +51,7 @@ procedure TRepositorioRota.AtribuiDBParaEntidade(
   const coROTA: TROTA);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coROTA.DISTANCIA_NM   := FieldByName(FLD_ROTA_DISTANCIA_NM).AsInteger;
     coROTA.TEMPO_MINUTOS  := FieldByName(FLD_ROTA_TEMPO_MINUTOS).AsInteger;

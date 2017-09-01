@@ -81,14 +81,14 @@ end;
 
 function TfrmPesquisa.RetornaDataSet: TSQLDataSet;
 begin
-  UDM.dmProway.SQLSelect.Close;
+  UDM.dmEntra21.SQLSelect.Close;
 
   //select *
   //  from 'nome da tabela'
-  UDM.dmProway.SQLSelect.CommandText := FOpcaoPesquisa.SQL;
-  UDM.dmProway.SQLSelect.Open;
+  UDM.dmEntra21.SQLSelect.CommandText := FOpcaoPesquisa.SQL;
+  UDM.dmEntra21.SQLSelect.Open;
 
-  Result := UDM.dmProway.SQLSelect;
+  Result := UDM.dmEntra21.SQLSelect;
 end;
 
 procedure TfrmPesquisa.Inicializa;

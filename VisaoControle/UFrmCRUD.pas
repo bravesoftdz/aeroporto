@@ -120,10 +120,10 @@ procedure TFrmCRUD.btnExcluirClick(Sender: TObject);
 begin
   if TDialogo.Questiona(STR_ENTIDADE_DESEJA_EXCLUIR, [FRegraCRUD.NOME_ENTIDADE]) then
     begin
-      dmProway.IniciaTransacao;
+      dmEntra21.IniciaTransacao;
       try
         RemoveEntidade;
-        dmProway.FinalizaTransacao;
+        dmEntra21.FinalizaTransacao;
         TDialogo.Informacao(Format(STR_OPERACAO_COM_SUCESSO
                                  , [FRegraCRUD.NOME_ENTIDADE
                                   , StrToIntDef(edCodigo.Text, 0)
@@ -135,7 +135,7 @@ begin
       except
         on E: Exception do
           begin
-            dmProway.AbortaTransacao;
+            dmEntra21.AbortaTransacao;
             TDialogo.Excecao(E);
           end;
       end;
@@ -145,11 +145,11 @@ end;
 procedure TFrmCRUD.btnGravarClick(Sender: TObject);
 begin
   PreencheEntidade;
-  dmProway.IniciaTransacao;
+  dmEntra21.IniciaTransacao;
   try
     GravaEntidade;
 
-    dmProway.FinalizaTransacao;
+    dmEntra21.FinalizaTransacao;
     TDialogo.Informacao(Format(STR_OPERACAO_COM_SUCESSO,
                         [FRegraCRUD.NOME_ENTIDADE
                        , FENTIDADE.ID
@@ -161,7 +161,7 @@ begin
   except
     on E: Exception Do
       begin
-        dmProway.AbortaTransacao;
+        dmEntra21.AbortaTransacao;
         TDialogo.Excecao(E);
       end;
   end;

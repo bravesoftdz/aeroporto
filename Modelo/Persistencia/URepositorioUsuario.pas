@@ -39,13 +39,14 @@ end;
 
 function TRepositorioUsuario.RetornaPeloLogin(const csLogin: String): TUSUARIO;
 begin
-  dmProway.SQLSelect.Close;
-  dmProway.SQLSelect.CommandText := CNT_SELECT_PELO_LOGIN;
-  dmProway.SQLSelect.ParamByName(FLD_USUARIO_LOGIN).AsString := csLogin;
-  dmProway.SQLSelect.Open;
+  FSQLSelect.Close;
+  FSQLSelect.CommandText := CNT_SELECT_PELO_LOGIN;
+  FSQLSelect.Prepared    := True;
+  FSQLSelect.ParamByName(FLD_USUARIO_LOGIN).AsString := csLogin;
+  FSQLSelect.Open;
 
   Result := nil;
-  if not dmProway.SQLSelect.Eof then
+  if not FSQLSelect.Eof then
     begin
       Result := TUSUARIO.Create;
       AtribuiDBParaEntidade(Result);
@@ -55,7 +56,7 @@ end;
 procedure TRepositorioUsuario.AtribuiDBParaEntidade(const coUSUARIO: TUSUARIO);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coUSUARIO.LOGIN := FieldByName(FLD_USUARIO_LOGIN).AsString;
     coUSUARIO.SENHA := FieldByName(FLD_USUARIO_SENHA).AsString;

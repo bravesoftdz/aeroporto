@@ -57,7 +57,7 @@ end;
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
   sbPrincipal.Panels[0].Text :=
-    'Banco de Dados: ' + dmProway.SQLConnection.Params.Values[CNT_DATA_BASE];
+    'Banco de Dados: ' + dmEntra21.SQLConnection.Params.Values[CNT_DATA_BASE];
 
   sbPrincipal.Panels[1].Text :=
     'Usuário: ' + TUsuarioLogado.Unico.USUARIO.LOGIN;

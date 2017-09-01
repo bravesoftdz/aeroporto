@@ -51,7 +51,7 @@ procedure TRepositorioAeroporto.AtribuiDBParaEntidade(
   const coAEROPORTO: TAEROPORTO);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coAEROPORTO.NOME             := FieldByName(FLD_AEROPORTO_NOME).AsString;
     coAEROPORTO.TAMANHO_PISTA_KM := FieldByName(FLD_AEROPORTO_TAMANHO_PISTA_KM).AsFloat;

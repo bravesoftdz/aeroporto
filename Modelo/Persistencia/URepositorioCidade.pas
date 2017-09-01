@@ -35,7 +35,7 @@ end;
 procedure TRepositorioCidade.AtribuiDBParaEntidade(const coCIDADE: TCIDADE);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coCIDADE.NOME      := FieldByName(FLD_CIDADE_NOME).AsString;
     coCIDADE.POPULACAO := FieldByName(FLD_CIDADE_POPULACAO).AsInteger;

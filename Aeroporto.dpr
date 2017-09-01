@@ -42,8 +42,10 @@ uses
 {$R *.res}
 
 begin
+  {$DEFINE DESENV}
   Application.Initialize;
-  Application.CreateForm(TdmProway, dmProway);
+  Application.CreateForm(TdmEntra21, dmEntra21);
+  {$IFDEF PROD}
   FrmLogin := TFrmLogin.Create(nil);
   if FrmLogin.ShowModal = mrYes then
     begin
@@ -56,4 +58,9 @@ begin
       Application.Run;
       Application.Terminate;
     end;
+  {$ELSE}
+  TUsuarioLogado.Unico.RealizaLogin('admin', 'admin');
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+  {$ENDIF}
 end.

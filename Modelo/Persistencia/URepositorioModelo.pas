@@ -35,7 +35,7 @@ end;
 procedure TRepositorioModelo.AtribuiDBParaEntidade(const coMODELO: TMODELO);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coMODELO.NOME  := FieldByName(FLD_MODELO_NOME).AsString;
     //coMODELO.MARCA := nil; To-Do
