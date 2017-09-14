@@ -37,7 +37,12 @@ uses
   UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin},
   UUsuario in 'Modelo\Persistencia\UUsuario.pas',
   URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
-  UUsuarioLogado in 'Modelo\UUsuarioLogado.pas';
+  UUsuarioLogado in 'Modelo\UUsuarioLogado.pas',
+  URepositorioPapelPermissao in 'Modelo\Persistencia\URepositorioPapelPermissao.pas',
+  UFrmCadastroUsuario in 'VisaoControle\UFrmCadastroUsuario.pas' {FrmCadastroUsuario},
+  UPapel in 'Modelo\Persistencia\UPapel.pas',
+  URepositorioPapel in 'Modelo\Persistencia\URepositorioPapel.pas',
+  URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas';
 
 {$R *.res}
 

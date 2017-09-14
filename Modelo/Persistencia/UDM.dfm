@@ -46,6 +46,7 @@ object dmEntra21: TdmEntra21
       'ServerCharSet=UTF8'
       'Trim Char=False')
     VendorLib = 'fbclient.dll'
+    Connected = True
     Left = 32
     Top = 24
   end

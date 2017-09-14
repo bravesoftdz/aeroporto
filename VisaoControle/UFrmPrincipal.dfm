@@ -45,10 +45,30 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Aeroporto'
         OnClick = miAeroportoClick
       end
+      object miUsuario: TMenuItem
+        Caption = 'Usu'#225'rio'
+        OnClick = miUsuarioClick
+      end
+    end
+    object miPassagem: TMenuItem
+      Caption = 'Passagem'
+      object miCheckIn: TMenuItem
+        Caption = 'Check-In'
+      end
+      object miEmbarque: TMenuItem
+        Caption = 'Embarque'
+      end
     end
     object miSair: TMenuItem
       Caption = '&Sair'
-      OnClick = miSairClick
+      object miLogoff: TMenuItem
+        Caption = 'Logoff'
+        OnClick = miLogoffClick
+      end
+      object miEncerrarAplicacao: TMenuItem
+        Caption = 'Encerrar Aplica'#231#227'o'
+        OnClick = miEncerrarAplicacaoClick
+      end
     end
   end
 end

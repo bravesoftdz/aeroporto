@@ -26,6 +26,20 @@ type
     class function ComponenteValido(const coCompClass: TClass): Boolean;
   end;
 
+  TPapelUsuario = (tpluPiloto,
+                   tpluComissario,
+                   tpluAtendente,
+                   tpluAdministrador);
+
+  TListaPapeisUsuario = set of TPapelUsuario;
+
+  TPermissaoUsuario = (tpruRegistrarPassagem,
+                       tpruRealizarCheckIn,
+                       tpruConfirmarEmbarque,
+                       tpruAlterarHorarioEmbarque);
+
+  TListaPermissoesUsuario = set of TPermissaoUsuario;
+
 const
   CNT_TIPO_OPERACAO_USUARIO:
     array[TTipoOperacaoUsuario] of String = ('',
